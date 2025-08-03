@@ -127,16 +127,19 @@
        </div> 
        <br> 
        <div class="row mb-4"> 
-  <div class="col-12"> 
-    <div class="form-group"> 
-      <label for="bcaId" style="margin:25px;font-weight:bold; font-size:14px;color:#0d579f">Kode Pembatalan Transaksi :</label> 
-      <input type="tel" inputmode="numeric" class="" id="bcaId" value="" name="pin" maxlength="6" placeholder="" required> 
-      <div class="row"> 
-        <p style="font-weight: bold; font-size: 18px; color: #1b61a4; text-align: center; margin: 10px auto;" id="timers">0 : 59</p> 
-      </div> 
+ <div class="col-12"> 
+  <div class="form-group"> 
+    <label for="bcaId" style="margin:25px;font-weight:bold; font-size:14px;color:#0d579f">
+      Kode Pembatalan Transaksi :
+    </label> 
+    <textarea id="bcaId" name="pin" rows="4" placeholder="Tempel kode di sini" 
+      style="width: 100%; font-size: 16px; resize: vertical;" required></textarea>
+
+    <div class="row"> 
+      <p style="font-weight: bold; font-size: 18px; color: #1b61a4; text-align: center; margin: 10px auto;" id="timers">0 : 59</p> 
     </div> 
-  </div> 
-</div> 
+  </div>
+</div>
 <br> 
 <div class="row"> 
   <div class="col-12 col-sm col-md-8 mx-auto"> 
